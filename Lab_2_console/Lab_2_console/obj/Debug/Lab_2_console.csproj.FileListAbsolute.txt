@@ -1,0 +1,15 @@
+D:\Working_Programs\Lab_2_console\Lab_2_console\bin\Debug\Lab_2_console.exe.config
+D:\Working_Programs\Lab_2_console\Lab_2_console\bin\Debug\Lab_2_console.exe
+D:\Working_Programs\Lab_2_console\Lab_2_console\bin\Debug\Lab_2_console.pdb
+D:\Working_Programs\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.csproj.AssemblyReference.cache
+D:\Working_Programs\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.csproj.SuggestedBindingRedirects.cache
+D:\Working_Programs\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.csproj.CoreCompileInputs.cache
+D:\Working_Programs\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.exe
+D:\Working_Programs\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.pdb
+D:\C#\Lab_2_console\Lab_2_console\bin\Debug\Lab_2_console.exe.config
+D:\C#\Lab_2_console\Lab_2_console\bin\Debug\Lab_2_console.exe
+D:\C#\Lab_2_console\Lab_2_console\bin\Debug\Lab_2_console.pdb
+D:\C#\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.csproj.AssemblyReference.cache
+D:\C#\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.csproj.CoreCompileInputs.cache
+D:\C#\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.exe
+D:\C#\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.pdb
