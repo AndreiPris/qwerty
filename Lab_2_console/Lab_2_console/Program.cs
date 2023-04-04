@@ -51,7 +51,7 @@ namespace Lab_2_console
             Console.WriteLine("Enter values");
             while (true)
             {
-                Console.Write("Strength: {0}");
+                Console.Write("Strength: ");
                 string strengthInput = Console.ReadLine();
                 if (int.TryParse(strengthInput, out int strength))
                 {
@@ -66,7 +66,7 @@ namespace Lab_2_console
 
             while (true)
             {
-                Console.Write("Speed: {0}");
+                Console.Write("Speed: ");
                 string speedInput = Console.ReadLine();
                 if (double.TryParse(speedInput, out double speed))
                 {
@@ -82,7 +82,7 @@ namespace Lab_2_console
 
             while (true)
             {
-                Console.Write("Weight: {0}");
+                Console.Write("Weight: ");
                 string weightInput = Console.ReadLine();
                 if (int.TryParse(weightInput, out int weight))
                 {
@@ -97,7 +97,7 @@ namespace Lab_2_console
 
             while (true)
             {
-                Console.Write("Weight: {0}");
+                Console.Write("Weight: ");
                 string iqInput = Console.ReadLine();
                 if (int.TryParse(iqInput, out int iq))
                 {
@@ -117,6 +117,11 @@ namespace Lab_2_console
                 strength, speed, iq, weight);
         }
         public abstract void giveAge();
+
+        public virtual void Sealed()
+        {
+            Console.WriteLine("I am a athlete");
+        }
         public virtual void writeFile(string filename)
         {
             StreamWriter sw = new StreamWriter(filename);
@@ -133,6 +138,7 @@ namespace Lab_2_console
         double record;
         int striking;
         int grappling;
+        const int answer = 4;
 
         public mmaFighter() : base()
         {
@@ -161,7 +167,7 @@ namespace Lab_2_console
         {
             Console.WriteLine("2 + 2 = ?");
             int n = Console.Read();
-            if (n == 4)
+            if (n == answer)
             {
                 Console.WriteLine("Insain!!!");
             }
@@ -173,6 +179,53 @@ namespace Lab_2_console
 
         public override void input()
         {
+            base.input();
+            Console.WriteLine("Enter values");
+            while (true)
+            {
+                Console.Write("Record: ");
+                string recordInput = Console.ReadLine();
+                if (double.TryParse(recordInput, out double record))
+                {
+                    this.record = record;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Try again");
+                }
+            }
+
+            while (true)
+            {
+                Console.Write("striking: ");
+                string strikingInput = Console.ReadLine();
+                if (int.TryParse(strikingInput, out int striking))
+                {
+                    this.striking = striking;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Try again");
+                }
+            }
+
+
+            while (true)
+            {
+                Console.Write("Weight: ");
+                string grapplingInput = Console.ReadLine();
+                if (int.TryParse(grapplingInput, out int grappling))
+                {
+                    this.grappling = grappling;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Try again");
+                }
+            }
 
         }
 
@@ -185,6 +238,11 @@ namespace Lab_2_console
                 Console.WriteLine("We are the same age");
             }
             Console.WriteLine("FighterAge: {0}", age);
+        }
+
+        sealed public override void Sealed()
+        {
+            Console.WriteLine("I am an mmaFighter");
         }
         public override void writeFile(string filename)
         {
@@ -240,7 +298,36 @@ namespace Lab_2_console
         }
         public override void input()
         {
+            base.input();
+            while (true)
+            {
+                Console.Write("Record: ");
+                string ratingInput = Console.ReadLine();
+                if (int.TryParse(ratingInput, out int rating))
+                {
+                    this.rating = rating;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Try again");
+                }
+            }
 
+            while (true)
+            {
+                Console.Write("Record: ");
+                string numberInput = Console.ReadLine();
+                if (int.TryParse(numberInput, out int number))
+                {
+                    this.number = number;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Try again");
+                }
+            }
         }
 
 
@@ -255,7 +342,7 @@ namespace Lab_2_console
             sw.Close();
         }
     }
-    class powerlifter : sports
+    sealed class powerlifter : sports
     {
         float benchPress;
         float deadlift;
@@ -275,7 +362,7 @@ namespace Lab_2_console
             benchPress = 150;
             deadlift = 200;
             this.squat = squat;
-            //sports sports = new sports(100, 100, 100, 100);  
+           
         }
         public override void print()
         {
@@ -295,6 +382,54 @@ namespace Lab_2_console
             }
             Console.WriteLine("LifterAge: {0}", age);
         }
+
+        public override void input()
+        {
+            base.input();
+            while (true)
+            {
+                Console.Write("Record: ");
+                string benchPressInput = Console.ReadLine();
+                if (float.TryParse(benchPressInput, out float benchPress))
+                {
+                    this.benchPress = benchPress;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Try again");
+                }
+            }
+            while (true)
+            {
+                Console.Write("Record: ");
+                string deadliftInput = Console.ReadLine();
+                if (float.TryParse(deadliftInput, out float deadlift))
+                {
+                    this.deadlift = deadlift;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Try again");
+                }
+            }
+            while (true)
+            {
+                Console.Write("Record: ");
+                string squatInput = Console.ReadLine();
+                if (float.TryParse(squatInput, out float squat))
+                {
+                    this.squat = squat;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Try again");
+                }
+            }
+
+        }
         public override void writeFile(string filename)
         {
             StreamWriter sw = new StreamWriter(filename);
@@ -312,24 +447,25 @@ namespace Lab_2_console
     {
         public static void Main()
         {
-            powerlifter[] pVector = new powerlifter[2];
-            pVector[0] = new powerlifter();
-            pVector[1] = new powerlifter(150, 100, 100, 100, 100);
 
-            footballPlayer[] fVector = new footballPlayer[2];
-            fVector[0] = new footballPlayer();
-            fVector[1] = new footballPlayer(66, 5);
+            sports[] Vector = new sports[6];
+            Vector[0] = new powerlifter();
+            Vector[1] = new powerlifter(150, 100, 100, 100, 100);
+            Vector[2] = new footballPlayer();
+            Vector[3] = new footballPlayer(66, 5);
+            Vector[4] = new mmaFighter();
+            Vector[5] = new mmaFighter(0.5, 77, 74);
 
-            mmaFighter[] mmaVector = new mmaFighter[2];
-            mmaVector[0] = new mmaFighter();
-            mmaVector[1] = new mmaFighter(0.5, 77, 74);
-            pVector[1].print();
-            //pVector[1].giveAge();
-            //pTest.print();
-            //f.print();
-            //mma.print();
-            mmaVector[1].print();
-            mmaVector[1].writeFile("D:\\C#\\Lab_2_console\\file.txt");
+            Vector[0].print();
+            Vector[0].input();
+            Vector[0].print();
+            //Vector[1].print();
+
+
+            //Vector[0].print();
+            //Vector[2].print();
+
+            Vector[1].writeFile("D:\\qwerty\\Lab_2_console\\file.txt");
         }
     }
 }

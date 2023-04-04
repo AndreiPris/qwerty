@@ -13,3 +13,10 @@ D:\C#\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.csproj.AssemblyReferen
 D:\C#\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.csproj.CoreCompileInputs.cache
 D:\C#\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.exe
 D:\C#\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.pdb
+D:\qwerty\Lab_2_console\Lab_2_console\bin\Debug\Lab_2_console.exe.config
+D:\qwerty\Lab_2_console\Lab_2_console\bin\Debug\Lab_2_console.exe
+D:\qwerty\Lab_2_console\Lab_2_console\bin\Debug\Lab_2_console.pdb
+D:\qwerty\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.csproj.AssemblyReference.cache
+D:\qwerty\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.csproj.CoreCompileInputs.cache
+D:\qwerty\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.exe
+D:\qwerty\Lab_2_console\Lab_2_console\obj\Debug\Lab_2_console.pdb
