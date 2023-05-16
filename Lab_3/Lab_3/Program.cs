@@ -8,53 +8,257 @@ namespace Lab_3
 {
     class Student
     {
-        public string name = "";
-        public float laziness;  
+        public int averageMark;
         public double iq;
-        public byte exams;
+        public int exams;
         public int[] marks;
-        static int students = 3;
+
 
 
         public Student()
         {
-            name = "LILPip";
-            laziness = 0.9f;
+            averageMark = 3;
             iq = 199;
-            exams = 5;
-            marks = new int[5] { 5, 5, 5, 5, 5 };
-            students++;
         }
 
-        public Student(string name, float laziness, double iq, byte exams, int[] marks)
+        public Student(int averageMark, int iq)
         {
-            this.name = name;
-            this.laziness = laziness;
+
+            this.averageMark = averageMark;
             this.iq = iq;
-            this.exams = exams;
-            this.marks = marks;
-            students++;
         }
 
-        public Student(Student clon)
+        public void Ex()
         {
-            name = clon.name;
-            laziness = clon.laziness;
-            iq = clon.iq;
-            exams = clon.exams;
-            marks = clon.marks;
-            students++;
-        }
-
-
-    public void print()
-        {
-            Console.WriteLine("Name: {0}, level of laziness(0, 1): {1}, IQ(100 - 200): {2}, amount of exams: {3}", name, laziness, iq, exams);
-            for (int i = 0; i < marks.Length; i++)
+            try
             {
-                Console.WriteLine("Mark {0}: {1}", i + 1, marks[i]);
+                float caf = (float)averageMark / (float)iq;
+                Console.WriteLine($"Коофицент успеваемости: {caf}");
+                
             }
-            //Console.WriteLine("All Students: {0}", students);
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Возникла ошибка при делении: {ex.Message}");
+            }
+        }
+
+        public void inputEx()
+        {
+            bool b = false;
+            Console.WriteLine("Enter values");
+            do
+            {
+                b = false;
+                try
+                {
+                    Console.WriteLine("Enter avgMark: ");
+                    averageMark = int.Parse(Console.ReadLine());
+                    if (averageMark <= 0 || averageMark > 10)
+                    {
+                        throw new ParsEx(averageMark);
+                    }
+                }
+                catch (ParsEx ex)
+                {
+                    ex.obrabotkaMark();
+                    b = true;
+                }
+
+            } while (b == true);
+
+            do
+            {
+                b = false;
+                try
+                {
+                    Console.WriteLine("Enter iq: ");
+                    iq = int.Parse(Console.ReadLine());
+                    if (iq < 100 || iq > 200)
+                    {
+                        throw new ParsEx(iq);
+                    }
+                }
+                catch (ParsEx ex)
+                {
+                    ex.obrabotkaIq();
+                    b = true;
+                }
+
+            } while (b == true);
+        }
+
+        public void inputAvg()
+        {
+            Console.WriteLine("Enter avgMark: ");
+            averageMark = int.Parse(Console.ReadLine());
+            if (averageMark <= 0 || averageMark > 10)
+            {
+                throw new ParsEx(averageMark);
+            }
+        }
+
+        public void inputIq()
+        {
+            Console.WriteLine("Enter iq: ");
+            iq = int.Parse(Console.ReadLine());
+            if (iq < 100 || iq > 200)
+            {
+                throw new ParsEx(iq);
+            }
+        }
+
+        public void inputAll()
+        {
+            bool a = false;
+            do
+            {
+                a = false;
+                try
+                {
+                    inputAvg();
+                }
+                catch (ParsEx ex)
+                {
+                    ex.obrabotkaIq();
+                    a = true;
+                }
+
+            } while (a == true);
+
+            do
+            {
+                a = false;
+                try
+                {
+                    inputIq();
+                }
+                catch (ParsEx ex)
+                {
+                    ex.obrabotkaIq();
+                    a = true;
+                }
+
+            } while (a == true);
+        }
+
+
+        public void Trytry()
+        {
+            try
+            {
+                try
+                {
+                    exams = Console.Read();
+                }
+                catch (ArgumentException e)
+                {
+                    throw new ParsEx(e);
+                }
+            }
+            catch (ParsEx p)
+            {
+                p.obrabotkaObjects();
+            }
+            try
+            {
+                try
+                {
+                    exams = Console.Read();
+                }
+                catch (ArgumentOutOfRangeException e)
+                {
+                    throw new ParsEx(e);
+                }
+            }
+            catch (ParsEx p)
+            {
+                p.obrabotkaObjects();
+            }
+            try
+            {
+                try
+                {
+                    marks = new int[exams];
+                    for (int i = 0; i < exams; i++)
+                    {
+                        marks[i] = 5;
+                    }
+                }
+                catch (IndexOutOfRangeException e)
+                {
+                    throw new ParsEx(e);
+                }
+            }
+            catch (ParsEx p)
+            {
+                p.obrabotkaObjects();
+            }
+        }
+
+        public void print()
+        {
+            Console.WriteLine("avg mark(0, 10): {0}, IQ(100 - 200): {1}", averageMark, iq);
+        }
+    }
+
+    public class ParsEx : Exception
+    {
+        public int errMark = 0;
+        public double errIq = 0;
+
+        Exception programErr;
+        public ParsEx(int x) { errMark = x; }
+        public ParsEx(double x) { errIq = x; }
+        public ParsEx(Exception x) { programErr = x; }
+
+        public void obrabotkaMark()
+        {
+            if (errMark <= 0)
+            {
+                Console.WriteLine("Avg Mark can not be less or equal to zero, try again");
+            }
+            else if (errMark > 10)
+            {
+                Console.WriteLine("Avg Mark can not be bigger then ten, try again");
+            }
+
+
+        }
+        public void obrabotkaIq()
+        {
+            if (errIq < 100)
+            {
+                Console.WriteLine("We don't have such stupid students, try again");
+            }
+            else if (errIq > 200)
+            {
+                Console.WriteLine("We don't have such clever students, try again");
+            }
+        }
+        public void obrabotkaObjects()
+        {
+            if (programErr is ArgumentException) { }
+            if (programErr is ArgumentOutOfRangeException) { }
+            if (programErr is IndexOutOfRangeException) { }
+            if (programErr is NullReferenceException) { }
+        }
+    }
+    class General
+    {
+        public static void Main()
+        {
+            Student s = new Student(5, 0);
+            Student sEx = new Student();
+            Student sAll = new Student();
+            s.print();
+            s.Ex();
+
+            //s.inputEx();
+            //s.print();
+
+            sAll.inputAll();
+            sAll.print();
+
         }
     }
 }

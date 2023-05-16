@@ -1,0 +1,8 @@
+D:\qwerty\Cesnokov_Lab_2\Cesnokov_Lab_2\obj\Debug\Cesnokov_Lab_2.csproj.AssemblyReference.cache
+D:\qwerty\Cesnokov_Lab_2\Cesnokov_Lab_2\obj\Debug\Cesnokov_Lab_2.csproj.SuggestedBindingRedirects.cache
+D:\qwerty\Cesnokov_Lab_2\Cesnokov_Lab_2\obj\Debug\Cesnokov_Lab_2.csproj.CoreCompileInputs.cache
+D:\qwerty\Cesnokov_Lab_2\Cesnokov_Lab_2\bin\Debug\Cesnokov_Lab_2.exe.config
+D:\qwerty\Cesnokov_Lab_2\Cesnokov_Lab_2\bin\Debug\Cesnokov_Lab_2.exe
+D:\qwerty\Cesnokov_Lab_2\Cesnokov_Lab_2\bin\Debug\Cesnokov_Lab_2.pdb
+D:\qwerty\Cesnokov_Lab_2\Cesnokov_Lab_2\obj\Debug\Cesnokov_Lab_2.exe
+D:\qwerty\Cesnokov_Lab_2\Cesnokov_Lab_2\obj\Debug\Cesnokov_Lab_2.pdb

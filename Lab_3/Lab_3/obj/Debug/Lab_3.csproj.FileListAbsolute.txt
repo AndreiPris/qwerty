@@ -1,0 +1,7 @@
+D:\qwerty\Lab_3\Lab_3\bin\Debug\Lab_3.exe.config
+D:\qwerty\Lab_3\Lab_3\bin\Debug\Lab_3.exe
+D:\qwerty\Lab_3\Lab_3\bin\Debug\Lab_3.pdb
+D:\qwerty\Lab_3\Lab_3\obj\Debug\Lab_3.csproj.AssemblyReference.cache
+D:\qwerty\Lab_3\Lab_3\obj\Debug\Lab_3.csproj.CoreCompileInputs.cache
+D:\qwerty\Lab_3\Lab_3\obj\Debug\Lab_3.exe
+D:\qwerty\Lab_3\Lab_3\obj\Debug\Lab_3.pdb
