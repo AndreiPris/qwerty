@@ -10,7 +10,7 @@ namespace Lab_3
     {
         public int averageMark;
         public double iq;
-        public int exams;
+        public int exams = 0;
         public int[] marks;
 
 
@@ -19,28 +19,32 @@ namespace Lab_3
         {
             averageMark = 3;
             iq = 199;
+            exams = 1;
+            marks = new int[exams];
         }
 
-        public Student(int averageMark, int iq)
+        public Student(int averageMark, int iq, int exams, int[] marks)
         {
 
             this.averageMark = averageMark;
             this.iq = iq;
+            this.exams = exams;
+            this.marks = marks;
         }
 
-        public void Ex()
-        {
-            try
-            {
-                float caf = (float)averageMark / (float)iq;
-                Console.WriteLine($"Коофицент успеваемости: {caf}");
+        //public void Ex()
+        //{
+        //    try
+        //    {
+        //        float caf = (float)averageMark / (float)iq;
+        //        Console.WriteLine($"Коофицент успеваемости: {caf}");
                 
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine($"Возникла ошибка при делении: {ex.Message}");
-            }
-        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        Console.WriteLine($"Возникла ошибка при делении: {ex.Message}");
+        //    }
+        //}
 
         public void inputEx()
         {
@@ -142,49 +146,45 @@ namespace Lab_3
         }
 
 
-        public void Trytry()
+        public void trytry()
         {
             try
             {
                 try
                 {
-                    exams = Console.Read();
+                    Console.WriteLine("Введите колиличиство экзаменов: ");
+                    exams = int.Parse(Console.ReadLine());
+                    marks = new int[exams];
+                    for (int i = 0; i < exams; i++)
+                    {
+                        marks[i] = 10;
+                    }
                 }
                 catch (ArgumentException e)
                 {
                     throw new ParsEx(e);
                 }
-            }
-            catch (ParsEx p)
-            {
-                p.obrabotkaObjects();
-            }
-            try
-            {
-                try
-                {
-                    exams = Console.Read();
-                }
-                catch (ArgumentOutOfRangeException e)
+                catch (IndexOutOfRangeException e)
                 {
                     throw new ParsEx(e);
                 }
-            }
-            catch (ParsEx p)
-            {
-                p.obrabotkaObjects();
-            }
-            try
-            {
-                try
+                catch (InvalidCastException e)
                 {
-                    marks = new int[exams];
-                    for (int i = 0; i < exams; i++)
-                    {
-                        marks[i] = 5;
-                    }
+                    throw new ParsEx(e);
                 }
-                catch (IndexOutOfRangeException e)
+                catch (NullReferenceException e)
+                {
+                    throw new ParsEx(e);
+                }
+                catch (OverflowException e)
+                {
+                    throw new ParsEx(e);
+                }
+                catch (FormatException e)
+                {
+                    throw new ParsEx(e);
+                }
+                catch (DivideByZeroException e)
                 {
                     throw new ParsEx(e);
                 }
@@ -198,6 +198,17 @@ namespace Lab_3
         public void print()
         {
             Console.WriteLine("avg mark(0, 10): {0}, IQ(100 - 200): {1}", averageMark, iq);
+        }
+
+        public void printExams()
+        {
+            Console.WriteLine("Количество экзаменов: {0}", exams);
+            Console.WriteLine("Оценки: ");
+            for (int i = 0; i < exams; i++)
+            {
+                Console.WriteLine("Экзамен N:{0} - {1}", i, marks[i]); 
+            }
+
         }
     }
 
@@ -237,27 +248,43 @@ namespace Lab_3
         }
         public void obrabotkaObjects()
         {
-            if (programErr is ArgumentException) { }
-            if (programErr is ArgumentOutOfRangeException) { }
-            if (programErr is IndexOutOfRangeException) { }
-            if (programErr is NullReferenceException) { }
+            if (programErr is ArgumentException)//генерируется, если в метод для параметра передается некорректное значение
+            { Console.WriteLine(programErr.Message + " ArgumentException"); }
+            if (programErr is ArgumentOutOfRangeException)//генерируется, если значение аргумента находится вне диапазона допустимых значений
+            { Console.WriteLine(programErr.Message + " ArgumentOutOfRangeException"); }
+            if (programErr is IndexOutOfRangeException)//генерируется, если индекс элемента массива или коллекции находится вне диапазона допустимых значений
+            { Console.WriteLine(programErr.Message + " IndexOutOfRangeException"); }
+            if (programErr is NullReferenceException)//генерируется при попытке обращения к объекту, который равен null (то есть по сути неопределен)
+            { Console.WriteLine(programErr.Message + " NullReferenceException"); }
+            if (programErr is DivideByZeroException)//представляет исключение, которое генерируется при делении на ноль
+            { Console.WriteLine(programErr.Message + " DivideByZeroException"); }
+            if (programErr is InvalidCastException)//генерируется при попытке произвести недопустимые преобразования типов
+            { Console.WriteLine(programErr.Message + " InvalidCastException"); }
+            if (programErr is OverflowException)
+            { Console.WriteLine(programErr.Message + " OverflowException"); }
+            if (programErr is FormatException)
+            { Console.WriteLine(programErr.Message + " FormatException"); }
         }
     }
     class General
     {
         public static void Main()
         {
-            Student s = new Student(5, 0);
-            Student sEx = new Student();
-            Student sAll = new Student();
-            s.print();
-            s.Ex();
+            //Student s = new Student(5, 0);
+            //Student sEx = new Student();
+            //Student sAll = new Student();
+            Student strytry = new Student();
+            //s.print();
+            //s.Ex();
 
             //s.inputEx();
             //s.print();
 
-            sAll.inputAll();
-            sAll.print();
+            //sAll.inputAll();
+            //sAll.print();
+
+            strytry.trytry();
+            strytry.printExams();
 
         }
     }
