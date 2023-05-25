@@ -459,11 +459,9 @@ namespace Lab_2_console
             Vector[0].print();
             Vector[0].input();
             Vector[0].print();
-            //Vector[1].print();
+            Vector[2].print();
+            Vector[4].print();
 
-
-            //Vector[0].print();
-            //Vector[2].print();
 
             Vector[1].writeFile("D:\\qwerty\\Lab_2_console\\file.txt");
         }

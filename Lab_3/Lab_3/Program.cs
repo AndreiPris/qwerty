@@ -270,18 +270,13 @@ namespace Lab_3
     {
         public static void Main()
         {
-            //Student s = new Student(5, 0);
-            //Student sEx = new Student();
-            //Student sAll = new Student();
+            Student sEx = new Student();
+            Student sAll = new Student();
             Student strytry = new Student();
-            //s.print();
-            //s.Ex();
 
-            //s.inputEx();
-            //s.print();
 
-            //sAll.inputAll();
-            //sAll.print();
+            sAll.inputAll();
+            sAll.print();
 
             strytry.trytry();
             strytry.printExams();

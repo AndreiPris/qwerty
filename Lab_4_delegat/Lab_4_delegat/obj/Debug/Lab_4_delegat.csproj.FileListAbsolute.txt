@@ -1,0 +1,8 @@
+D:\qwerty\Lab_4_delegat\Lab_4_delegat\obj\Debug\Lab_4_delegat.csproj.AssemblyReference.cache
+D:\qwerty\Lab_4_delegat\Lab_4_delegat\obj\Debug\Lab_4_delegat.csproj.SuggestedBindingRedirects.cache
+D:\qwerty\Lab_4_delegat\Lab_4_delegat\obj\Debug\Lab_4_delegat.csproj.CoreCompileInputs.cache
+D:\qwerty\Lab_4_delegat\Lab_4_delegat\bin\Debug\Lab_4_delegat.exe.config
+D:\qwerty\Lab_4_delegat\Lab_4_delegat\bin\Debug\Lab_4_delegat.exe
+D:\qwerty\Lab_4_delegat\Lab_4_delegat\bin\Debug\Lab_4_delegat.pdb
+D:\qwerty\Lab_4_delegat\Lab_4_delegat\obj\Debug\Lab_4_delegat.exe
+D:\qwerty\Lab_4_delegat\Lab_4_delegat\obj\Debug\Lab_4_delegat.pdb
