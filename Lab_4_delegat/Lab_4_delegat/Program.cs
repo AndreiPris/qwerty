@@ -14,9 +14,6 @@ namespace Lab_4_delegat
         public int Strength { get; set; }
 
         public static List<Athletes> AthleteList = new List<Athletes>();
-        private static object _lockObject = new object();
-
-
 
         public void FindStrongestAtleteInColumn(object columnIndex)
         {
@@ -43,17 +40,13 @@ namespace Lab_4_delegat
                     Strongest = currentAtlete;
                 }
             }
+               
+             Console.WriteLine($"Самый сильный атлет{column + 1}:");
+             Console.WriteLine($"Вес: {Strongest.Weight}");
+             Console.WriteLine($"Сила: {Strongest.Strength}");
 
-            lock (_lockObject)
-            {
-                // Выводим информацию о самой тяжелой звезде на экран
-                Console.WriteLine($"Самая тяжелая звезда в колонке {column + 1}:");
-                Console.WriteLine($"Вес: {Strongest.Weight}");
-                Console.WriteLine($"Сила: {Strongest.Strength}");
-
-                // Добавляем самую тяжелую звезду в глобальный список
-                AthleteList.Add(Strongest);
-            }
+             // Добавляем самого сильного в глобальный список
+             AthleteList.Add(Strongest);
         }
     }
 
@@ -79,16 +72,15 @@ namespace Lab_4_delegat
 
             Athletes heaviest = null;
 
-            // Находим звезду с минимальным числом планет в глобальном списке
             foreach (Athletes athlete in Athletes.AthleteList)
             {
-                if (heaviest == null || athlete.Weight < heaviest.Weight)
+                if (heaviest == null || athlete.Weight > heaviest.Weight)
                 {
                     heaviest = athlete;
                 }
             }
-
-            Console.WriteLine("\nЗвезда с минимальным числом планет:");
+            ы
+            Console.WriteLine("\nСамый тяжелый атлет:");
             Console.WriteLine($"Вес: {heaviest.Weight}");
             Console.WriteLine($"Сила {heaviest.Strength}");
             Console.ReadLine();
